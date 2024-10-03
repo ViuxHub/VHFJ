@@ -1,4 +1,3 @@
-
 local Library = loadstring(Game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
 
 local PhantomForcesWindow = Library:NewWindow("VHFJ")
@@ -23,7 +22,7 @@ KillingCheats:CreateButton("Plutonium", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/PawsThePaw/Plutonium.AA/main/Plutonium.Loader.lua", true))()
 end)
 
-KillingCheats:CreateToggle("Auto Parry", function()
+KillingCheats:CreateButton("Auto Parry", function()
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 local humanoid = character:WaitForChild("Humanoid")
