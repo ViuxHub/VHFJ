@@ -23,8 +23,27 @@ KillingCheats:CreateButton("Plutonium", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/PawsThePaw/Plutonium.AA/main/Plutonium.Loader.lua", true))()
 end)
 
-KillingCheats:CreateToggle("Auto Ez", function(value)
-print(value)
+KillingCheats:CreateToggle("Auto Parry", function()
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+
+local function onParry()
+    -- Your parry logic here, such as activating the parry animation
+end
+
+local function autoParry()
+    while true do
+        wait(0.1)  -- Check every 0.1 seconds
+        -- Replace this condition with the actual game logic to detect an incoming attack
+        if isAttackIncoming() then
+            onParry()
+        end
+    end
+end
+
+-- Start the auto parry function
+autoParry()
 end)
 
 KillingCheats:CreateDropdown("DropDown", {"Hello", "World", "Hello World"}, 2, function(text)
